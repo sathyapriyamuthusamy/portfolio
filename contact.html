@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+ <nav class="navbar2">
+        <a href = "#" class="logo">Portfolio</a>
+        <u1>
+            <li><a href = "index.html">Home</a> </li>
+            <li><a href = "about.html">About</a> </li>
+            <li><a href = "services.html">Services</a> </li>
+            <li><a href = "skills.html">Skills</a> </li>
+            <li><a href = "project.html">Project</a> </li>
+            <li class="active"><a href = "contact.html">Contact</a> </li>
+                    
+            
+        </u1>
+    </nav>
+
+<section class="service-detail">
+
+<div class="service-icon">
+    <i class='bx bx-envelope'></i>
+</div>
+
+<h1>Contact Me</h1>
+
+<p>
+Feel free to reach out for collaborations, project discussions,
+freelance opportunities, or academic and business solutions.
+</p>
+
+<h2>Contact Information</h2>
+
+<ul>
+<li><i class='bx bx-envelope'></i> msathya2218@gmail.com</li>
+<li><i class='bx bx-phone'></i> +91 XXXXX XXXXX</li>
+<li><i class='bx bx-map'></i> Tamil Nadu, India</li>
+</ul>
+
+<h2>Let's Work Together</h2>
+
+<p>
+Whether you need a website, application design, academic solution,
+or business project assistance, I'm always excited to discuss new
+ideas and opportunities.
+</p>
+
+<section class="contact">
+    <h2>Contact...</h2>
+
+    <form id="contact-form">
+        <div class="input-box">
+            <input type="text" name="from_name" placeholder="Your Name" required>
+            <input type="email" name="from_email" placeholder="Your Email" required>
+        </div>
+
+        <input type="text" name="subject" placeholder="Subject" required>
+
+        <textarea
+            name="message"
+            cols="30"
+            rows="10"
+            placeholder="Your Message"
+            required>
+        </textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <p id="status-message"></p>
+</section>
+
+<div class="navigation-buttons">
+
+<a href="project.html" class="nav-btn">
+<i class='bx bx-left-arrow-alt'></i>
+</a>
+
+<a href="index.html" class="nav-btn">
+    <i class='bx bx-home'></i>
+</a>
+
+</div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init("pp-i-gvhhg_ZRTRy9");
+
+document
+    .getElementById("contact-form")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        emailjs.sendForm(
+            "sathya_muthusamy_6408",
+            "template_k8b4pjs",
+            this
+        )
+        .then(() => {
+            document.getElementById("status-message").innerText =
+                "Message sent successfully!";
+            this.reset();
+        })
+        .catch((error) => {
+            document.getElementById("status-message").innerText =
+                "Failed to send message.";
+            console.error(error);
+        });
+});
+</script>
+
+</body>
+</html>
